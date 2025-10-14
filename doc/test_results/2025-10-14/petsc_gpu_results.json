@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-10-13 21:44:42",
+  "results": [
+    {
+      "library": "PETSc-GPU",
+      "test": "Poisson_2D_CG_GAMG_GPU",
+      "problem_size": 4096,
+      "setup_time": 0.269495,
+      "solve_time": 0.021541,
+      "total_time": 0.291036,
+      "iterations": 9,
+      "residual": 2.535138e-07
+    },
+    {
+      "library": "PETSc-GPU",
+      "test": "Poisson_2D_CG_GAMG_GPU",
+      "problem_size": 16384,
+      "setup_time": 0.047960,
+      "solve_time": 0.015449,
+      "total_time": 0.063409,
+      "iterations": 10,
+      "residual": 2.278937e-07
+    },
+    {
+      "library": "PETSc-GPU",
+      "test": "Poisson_2D_CG_GAMG_GPU",
+      "problem_size": 65536,
+      "setup_time": 0.126014,
+      "solve_time": 0.018439,
+      "total_time": 0.144452,
+      "iterations": 11,
+      "residual": 4.154331e-07
+    },
+    {
+      "library": "PETSc-GPU",
+      "test": "Poisson_2D_CG_GAMG_GPU",
+      "problem_size": 262144,
+      "setup_time": 0.418684,
+      "solve_time": 0.033574,
+      "total_time": 0.452259,
+      "iterations": 12,
+      "residual": 7.368288e-07
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-10-13 21:29:32",
+  "results": [
+    {
+      "library": "HYPRE-GPU",
+      "test": "Poisson_2D_PCG_BoomerAMG_GPU",
+      "problem_size": 4096,
+      "setup_time": 0.003825,
+      "solve_time": 0.001402,
+      "total_time": 0.005227,
+      "iterations": 4,
+      "residual": 3.866535e-07
+    },
+    {
+      "library": "HYPRE-GPU",
+      "test": "Poisson_2D_PCG_BoomerAMG_GPU",
+      "problem_size": 16384,
+      "setup_time": 0.015139,
+      "solve_time": 0.009488,
+      "total_time": 0.024627,
+      "iterations": 4,
+      "residual": 6.699884e-07
+    },
+    {
+      "library": "HYPRE-GPU",
+      "test": "Poisson_2D_PCG_BoomerAMG_GPU",
+      "problem_size": 65536,
+      "setup_time": 0.061381,
+      "solve_time": 0.031797,
+      "total_time": 0.093178,
+      "iterations": 5,
+      "residual": 4.617249e-08
+    },
+    {
+      "library": "HYPRE-GPU",
+      "test": "Poisson_2D_PCG_BoomerAMG_GPU",
+      "problem_size": 262144,
+      "setup_time": 0.263459,
+      "solve_time": 0.133882,
+      "total_time": 0.397341,
+      "iterations": 5,
+      "residual": 9.402803e-07
+    }
+  ]
+}

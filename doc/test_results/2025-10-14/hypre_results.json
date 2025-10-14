@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-10-13 16:21:38",
+  "results": [
+    {
+      "library": "HYPRE",
+      "test": "Poisson_2D_PCG_BoomerAMG",
+      "problem_size": 4096,
+      "setup_time": 0.003709,
+      "solve_time": 0.001619,
+      "total_time": 0.005329,
+      "iterations": 4,
+      "residual": 3.866535e-07
+    },
+    {
+      "library": "HYPRE",
+      "test": "Poisson_2D_PCG_BoomerAMG",
+      "problem_size": 16384,
+      "setup_time": 0.016490,
+      "solve_time": 0.007864,
+      "total_time": 0.024354,
+      "iterations": 4,
+      "residual": 6.699884e-07
+    },
+    {
+      "library": "HYPRE",
+      "test": "Poisson_2D_PCG_BoomerAMG",
+      "problem_size": 65536,
+      "setup_time": 0.063494,
+      "solve_time": 0.038808,
+      "total_time": 0.102302,
+      "iterations": 5,
+      "residual": 4.617249e-08
+    },
+    {
+      "library": "HYPRE",
+      "test": "Poisson_2D_PCG_BoomerAMG",
+      "problem_size": 262144,
+      "setup_time": 0.274060,
+      "solve_time": 0.158919,
+      "total_time": 0.432979,
+      "iterations": 5,
+      "residual": 9.402803e-07
+    }
+  ]
+}

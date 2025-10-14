@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-10-14 12:14:44",
+  "results": [
+    {
+      "library": "AMGX",
+      "test": "Poisson_2D_PCG_AMG",
+      "problem_size": 4096,
+      "setup_time": 0.109810,
+      "solve_time": 0.074933,
+      "total_time": 0.184743,
+      "iterations": 19,
+      "residual": 1.000000e-07
+    },
+    {
+      "library": "AMGX",
+      "test": "Poisson_2D_PCG_AMG",
+      "problem_size": 16384,
+      "setup_time": 0.020503,
+      "solve_time": 0.034786,
+      "total_time": 0.055289,
+      "iterations": 28,
+      "residual": 1.000000e-07
+    },
+    {
+      "library": "AMGX",
+      "test": "Poisson_2D_PCG_AMG",
+      "problem_size": 65536,
+      "setup_time": 0.024601,
+      "solve_time": 0.038830,
+      "total_time": 0.063431,
+      "iterations": 45,
+      "residual": 1.000000e-07
+    },
+    {
+      "library": "AMGX",
+      "test": "Poisson_2D_PCG_AMG",
+      "problem_size": 262144,
+      "setup_time": 0.034684,
+      "solve_time": 0.112096,
+      "total_time": 0.146780,
+      "iterations": 65,
+      "residual": 1.000000e-07
+    }
+  ]
+}

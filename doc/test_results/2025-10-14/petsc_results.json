@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-10-13 21:00:09",
+  "results": [
+    {
+      "library": "PETSc",
+      "test": "Poisson_2D_CG_GAMG",
+      "problem_size": 4096,
+      "setup_time": 0.043738,
+      "solve_time": 0.001642,
+      "total_time": 0.045381,
+      "iterations": 9,
+      "residual": 2.535138e-07
+    },
+    {
+      "library": "PETSc",
+      "test": "Poisson_2D_CG_GAMG",
+      "problem_size": 16384,
+      "setup_time": 0.030444,
+      "solve_time": 0.007404,
+      "total_time": 0.037848,
+      "iterations": 10,
+      "residual": 2.278937e-07
+    },
+    {
+      "library": "PETSc",
+      "test": "Poisson_2D_CG_GAMG",
+      "problem_size": 65536,
+      "setup_time": 0.127674,
+      "solve_time": 0.035250,
+      "total_time": 0.162924,
+      "iterations": 11,
+      "residual": 4.154331e-07
+    },
+    {
+      "library": "PETSc",
+      "test": "Poisson_2D_CG_GAMG",
+      "problem_size": 262144,
+      "setup_time": 0.523456,
+      "solve_time": 0.186324,
+      "total_time": 0.709780,
+      "iterations": 12,
+      "residual": 7.368288e-07
+    }
+  ]
+}

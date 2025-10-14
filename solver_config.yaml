@@ -1,0 +1,114 @@
+# LinearAlgebra_cuda 求解器配置文件
+# 创建日期: 2025-10-13
+
+# AMGX 配置
+amgx:
+  solver: PCG
+  preconditioner: JACOBI  # 可选: AMG, JACOBI (当前测试 JACOBI)
+  
+  # AMG 预条件器参数 (当 preconditioner=AMG 时使用)
+  amg:
+    algorithm: AGGREGATION    # AGGREGATION 或 CLASSICAL
+    selector: SIZE_2          # SIZE_2, HMIS, PMIS
+    smoother: BLOCK_JACOBI    # BLOCK_JACOBI, MULTICOLOR_GS
+    presweeps: 1
+    postsweeps: 1
+    cycle: V                  # V, W, F
+    
+  # 收敛参数
+  convergence:
+    max_iters: 1000
+    tolerance: 1.0e-6
+    convergence_type: RELATIVE_INI_CORE
+
+# HYPRE CPU 配置
+hypre_cpu:
+  solver: PCG
+  preconditioner: BOOMERAMG  # 可选: BOOMERAMG, JACOBI, NONE
+  
+  # BoomerAMG 参数
+  boomeramg:
+    coarsen_type: 6          # 6=Falgout, 8=PMIS, 10=HMIS
+    relax_type: 6            # 6=对称GS, 3=混合GS
+    num_sweeps: 1
+    max_levels: 20
+    strong_threshold: 0.25
+    
+  # 收敛参数
+  convergence:
+    max_iters: 1000
+    tolerance: 1.0e-6
+
+# HYPRE GPU 配置
+hypre_gpu:
+  solver: PCG
+  preconditioner: BOOMERAMG
+  
+  # BoomerAMG 参数 (同 CPU)
+  boomeramg:
+    coarsen_type: 6
+    relax_type: 6
+    num_sweeps: 1
+    max_levels: 20
+    
+  # GPU 设置
+  gpu:
+    memory_location: DEVICE  # DEVICE 或 HOST
+    exec_policy: DEVICE      # DEVICE 或 HOST
+    
+  convergence:
+    max_iters: 1000
+    tolerance: 1.0e-6
+
+# PETSc CPU 配置
+petsc_cpu:
+  solver: CG
+  preconditioner: GAMG  # 可选: GAMG, JACOBI, ILU, NONE
+  
+  # GAMG 参数
+  gamg:
+    type: AGG              # AGG (聚合) 或 GEO (几何)
+    n_smooths: 1
+    threshold: 0.0
+    
+  # 收敛参数
+  convergence:
+    max_iters: 2000
+    rtol: 1.0e-6           # 相对容差
+    atol: 1.0e-8           # 绝对容差
+    norm_type: UNPRECONDITIONED
+
+# PETSc GPU 配置
+petsc_gpu:
+  solver: CG
+  preconditioner: GAMG
+  
+  # GAMG 参数 (同 CPU)
+  gamg:
+    type: AGG
+    n_smooths: 1
+    
+  # GPU 设置
+  gpu:
+    vec_type: CUDA         # CUDA 向量
+    mat_type: AIJCUSPARSE  # cuSPARSE 矩阵
+    use_gpu_aware_mpi: false  # WSL 环境禁用
+    
+  convergence:
+    max_iters: 2000
+    rtol: 1.0e-6
+    atol: 1.0e-8
+    norm_type: UNPRECONDITIONED
+
+# 全局测试参数
+global:
+  problem:
+    type: POISSON_2D        # POISSON_2D 或 POISSON_3D
+    grid_sizes: [64, 128, 256, 512]  # 测试的网格规模
+    
+  output:
+    results_dir: results
+    print_residual: true
+    save_csv: true
+    save_json: true
+
