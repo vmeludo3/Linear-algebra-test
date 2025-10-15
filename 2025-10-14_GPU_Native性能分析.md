@@ -94,7 +94,7 @@
 
 ## 3️⃣ HYPRE-GPU Native
 
-**状态**: ❌ **测试失败**
+**状态**: ❌ **无法解决，已放弃**
 
 **错误信息**:
 ```
@@ -103,12 +103,23 @@ terminate called after throwing an instance of 'thrust::system::system_error'
   cudaErrorInvalidDevice: invalid device ordinal
 ```
 
-**原因分析**:
-- HYPRE 在 WSL 环境下对 GPU 设备初始化要求严格
-- 当前的矩阵生成方式与 HYPRE 的内部初始化有冲突
-- 需要更深入的 HYPRE 内部机制理解
+**深入分析**:
+- ✅ 已尝试：GPU 生成矩阵、CPU 生成矩阵
+- ✅ 已尝试：`.cu` 文件、`.cpp` 文件
+- ✅ 已尝试：多种 CUDA 初始化顺序
+- ❌ 结果：所有方案均失败
 
-**未来工作**: 需要调整 CUDA 初始化顺序或使用 HYPRE 特定的 GPU 矩阵接口
+**根本原因**:
+- HYPRE 内部使用 Thrust 库进行 GPU 操作
+- Thrust 的 CUDA 设备管理与 WSL2 环境存在兼容性问题
+- 即使代码与成功的 `hypre_gpu_tests` 完全相同，在不同编译单元中仍然失败
+
+**解决方案**: 
+- ✅ **使用标准 HYPRE-GPU 版本** (`hypre_gpu_tests`)
+- 性能已经很好（比 CPU 快 23%）
+- GPU Native 即使能工作，性能提升也 <1%（传输仅 3ms vs 求解 134ms）
+
+**详细技术分析**: 见 `HYPRE_GPU_NATIVE_ISSUE_SUMMARY.md`
 
 ---
 

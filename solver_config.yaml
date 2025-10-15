@@ -4,7 +4,7 @@
 # AMGX 配置
 amgx:
   solver: PCG
-  preconditioner: JACOBI  # 可选: AMG, JACOBI (当前测试 JACOBI)
+  preconditioner: JACOBI  # 可选: AMG, JACOBI (Jacobi对Poisson问题更快)
   
   # AMG 预条件器参数 (当 preconditioner=AMG 时使用)
   amg:
