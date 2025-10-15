@@ -40,6 +40,14 @@
 ## 🚀 快速开始
 
 ### 1. 构建项目
+
+**方法 A: 使用 Python 脚本（推荐）⭐**
+```bash
+cd /home/zzy/Plasma/gpu/LinearAlgebra_cuda
+python3 rebuild.py
+```
+
+**方法 B: 使用传统脚本**
 ```bash
 cd /home/zzy/Plasma/gpu/LinearAlgebra_cuda
 ./build.sh
@@ -151,7 +159,27 @@ LinearAlgebra_cuda/
 - **MPI**: OpenMPI 3.1+
 - **CMake**: 3.18+
 - **编译器**: GCC 9.4+
+- **Python**: 3.6+ (用于 rebuild.py)
 - **yaml-cpp**: 用于配置文件解析
+
+---
+
+## 🔄 换电脑/迁移
+
+**只需 3 步**：
+
+```bash
+# 1. 修改库路径
+vim env_setup.sh  # 编辑第 10-20 行
+
+# 2. 加载环境
+source env_setup.sh
+
+# 3. 重新构建
+python3 rebuild.py --use-env
+```
+
+**详细说明**: 查看 [使用说明_换电脑.md](使用说明_换电脑.md)
 
 ---
 
